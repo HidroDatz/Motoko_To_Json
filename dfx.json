@@ -1,0 +1,34 @@
+{
+  "canisters": {
+    "Motoko_To_Json": {
+      "main": "src/Motoko_To_Json/main.mo",
+      "type": "motoko"
+    },
+    "Motoko_To_Json_assets": {
+      "dependencies": [
+        "Motoko_To_Json"
+      ],
+      "frontend": {
+        "entrypoint": "src/Motoko_To_Json_assets/src/index.html"
+      },
+      "source": [
+        "src/Motoko_To_Json_assets/assets",
+        "dist/Motoko_To_Json_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "vessel sources"
+    }
+  },
+  "dfx": "0.10.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

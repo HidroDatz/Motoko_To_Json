@@ -1,0 +1,4 @@
+service : {
+  objPrint: () -> () oneway;
+  print: (text) -> (text);
+}
