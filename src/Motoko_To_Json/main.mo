@@ -8,7 +8,7 @@ actor {
       let doituongx : JSON.JSON = #String(doituong);
       return JSON.show(doituongx);
   };
-  public func objPrint() : (){
+  public func objPrint() :  async Text {
     let objMap : JSON.ObjectMap = JSON.emptyObjectMap();
     let obj    : JSON.JSON      = #Object(objMap);
 
@@ -23,8 +23,14 @@ actor {
     let name = JSON.emptyObjectMap();
     name.put("firstName", #String("quint"));
     objMap.put("name", #Object(name));
-    return Debug.print(JSON.show(obj));
-    // return JSON.show(obj);
+    Debug.print(debug_show(JSON.show(obj)));
     // {"name": {"firstName": "quint"}, "username": "di-wu"}
+    return JSON.show(obj);
     };
+  public func arrayPrint() : async Text{
+    let p = JSON.Parser();
+
+    let v : JSON.JSON = #Array([p.parse("[ 5, 3 ,2 ,1 ]")]);
+    return JSON.show(v);
+  };
 }
