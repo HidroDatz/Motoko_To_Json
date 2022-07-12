@@ -6,14 +6,14 @@ let additions =
     [
      { name = "parser-combinators"
   , repo = "https://github.com/aviate-labs/parser-combinators.mo"
-  , version = "v0.1.0"
+  , version = "v0.1.1"
   , dependencies = ["base"]
   }
     ] : List Package
 let override = [
   {
           name = "json"
-         , version = "v0.1.1"
+         , version = "v0.1.2"
          , repo = "https://github.com/aviate-labs/json.mo"
          , dependencies = ["base"]
   }
