@@ -29,8 +29,17 @@ actor {
     };
   public func arrayPrint() : async Text{
     let p = JSON.Parser();
+    // let v : JSON.JSON = #String("\"Nguyen Thanh Dat\"");
+    // return JSON.show(v);
 
-    let v : JSON.JSON = #Array([p.parse("[ 5, 3 ,2 ,1 ]")]);
-    return JSON.show(v);
+    let v = switch (p.parse("[5,2,1,2,1]")) {
+    case (null) {
+        return "null";
+    };
+    case (? v)  {
+            return JSON.show(v);
+        };
   };
+
+
 }
